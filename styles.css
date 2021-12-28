@@ -1,0 +1,85 @@
+:root {
+  --color-background: 237,241,245;
+  --color-background-100: 251,251,251;
+  --color-shadow-blue: 103,132,187;
+  --color-text: 38,52,63;
+  --color-gray-700: 64,78,92;
+}
+
+.miru__btn {
+  background-color: rgb(var(--color-background-100));
+  box-shadow: 0 14px 30px rgba(var(--color-shadow-blue),.15),0 4px 4px rgba(var(--color-shadow-blue),.05);
+  border-radius: 10px;
+  animation: start .3s linear;
+  border: none;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.miru__toast {
+  padding: 10px;
+  width: 325px;
+  height: 80px;
+  background-color: rgb(var(--color-background-100));
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  box-shadow: 0 14px 30px rgba(var(--color-shadow-blue),0.15),0 4px 4px rgba(var(--color-shadow-blue),0.05);
+  border-radius: 4px;
+  box-sizing: border-box;
+  transform: translateX(104%);
+  transition: transform 0.2s;
+  color: rgb(var(--color-text));
+}
+
+.miru__toast--in {
+  transform: translateX(0%);
+}
+
+.miru__toast > h1 {
+  font-size: 1.4rem;
+  margin: 0.7rem 0;
+  color: inherit;
+}
+
+.miru__toast > span {
+  position: absolute;
+  height: 100%;
+  width: 54%;
+  border-radius: 4px;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: hsl(104,80%,70%);
+  transition: width 0.2s;
+}
+
+.miru__toast > p {
+  margin: 0.7rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgb(var(--color-gray-700));
+}
+
+/* animation for custome website */
+
+@keyframes toastIn {
+  0% {
+    opacity:0;
+  }to {
+    opacity:1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes start {
+  0% {
+    opacity:0;
+    transform:scale(.96)
+  }60% {
+    opacity:1;
+  }to {
+    transform:none;
+  }
+}
